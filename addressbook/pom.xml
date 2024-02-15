@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
     <groupId>com.edurekademo.tutorial</groupId>
     <artifactId>addressbook</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    
     <name>Address Book Edureka Demo</name>
     <url>https://github.com/SeshagiriSriram/addressbook</url>
-    
     <properties>
         <build.number>SNAPSHOT</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,17 +18,13 @@
         <github.account>SeshagiriSriram</github.account>
         <thucydides.version>0.9.268</thucydides.version>
         <jelastic.context>addressbook</jelastic.context>
-        
-        <!-- Define SonarQube Maven plugin version -->
-        <sonarqube.maven.version>3.9.0.2155</sonarqube.maven.version>
     </properties>
-    
+
     <scm>
         <connection>scm:git:git@github.com:${github.account}/addressbook.git</connection>
         <developerConnection>scm:git:git@github.com:${github.account}/addressbook.git</developerConnection>
         <url>scm:git:git@github.com:${github.account}/addressbook.git</url>
     </scm>
-    
     <pluginRepositories>
         <pluginRepository>
             <id>vaadin-snapshots</id>
@@ -45,67 +36,59 @@
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
-        <pluginRepository>
-            <id>apache.snapshots</id>
-            <name>Apache Snapshots</name>
-            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>apache.public</id>
-            <name>Apache public</name>
-            <url>http://repository.apache.org/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
+		 <pluginRepository>
+        <id>apache.snapshots</id>
+        <name>Apache Snapshots</name>
+        <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+	<pluginRepository>
+        <id>apache.public</id>
+        <name>Apache public</name>
+        <url>http://repository.apache.org/content/groups/public</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </pluginRepository>
     </pluginRepositories>
 
-    <build>
-        <plugins>
-            <!-- SonarQube Maven plugin -->
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>${sonarqube.maven.version}</version>
-            </plugin>
-            
-            <!-- Configure Maven compiler plugin for Java version -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${sourceJdk}</source>
-                    <target>${targetJdk}</target>
-                </configuration>
-            </plugin>
-            
-            <!-- Tomcat Maven plugin -->
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <url>http://192.168.56.104:8080/manager/text</url>
-                    <server>tomcat7server</server>
-                    <path>/addressbook</path>
-                    <update>true</update>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build> 
 
-    <modules>
+	
+<build>
+        <plugins>
+           <plugin>
+	<groupId>org.apache.tomcat.maven</groupId>
+	<artifactId>tomcat7-maven-plugin</artifactId>
+	<version>2.2</version>
+	<configuration>
+		<url>http://192.168.56.104:8080/manager/text</url>
+		<server>tomcat7server</server>
+		<path>/addressbook</path>
+		<update>true</update>
+	</configuration>
+	</plugin>
+	
+	<!-- Add the updated Maven Surefire plugin here -->
+	<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-surefire-plugin</artifactId>
+	    <version>3.0.0</version>
+	</plugin>
+	
+</plugins>
+</build> 
+
+ <modules>
         <module>addressbook_main</module>
     </modules>
-</project>
 
+
+</project>
