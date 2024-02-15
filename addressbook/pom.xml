@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.edurekademo.tutorial</groupId>
     <artifactId>addressbook</artifactId>
@@ -36,28 +37,28 @@
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
-		 <pluginRepository>
-        <id>apache.snapshots</id>
-        <name>Apache Snapshots</name>
-        <url>http://repository.apache.org/content/groups/snapshots-group/</url>
-        <releases>
-            <enabled>false</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </pluginRepository>
-	<pluginRepository>
-        <id>apache.public</id>
-        <name>Apache public</name>
-        <url>http://repository.apache.org/content/groups/public</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </pluginRepository>
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshots</name>
+            <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>apache.public</id>
+            <name>Apache public</name>
+            <url>http://repository.apache.org/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
     </pluginRepositories>
 
     <build>
@@ -65,9 +66,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0</version> <!-- Updated version -->
+                <version>3.0.0</version>
             </plugin>
-            <!-- Other plugins -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -80,10 +80,9 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build> 
+    </build>
 
     <modules>
         <module>addressbook_main</module>
     </modules>
-
 </project>
